@@ -4,19 +4,20 @@
 var intervalId;
 
 // Variable for where things need to go on the page
-var timerText = document.getElementById("timer");
+var timerText = $("#timer");
 
 // Variables for game scoring
 var corrAnswers = 0;
 var incorrAnswers = 0;
 var unansweredQs = 0;
+var countDown = 60;
 
 // var clockRunning = false;
 
 var startButton;
 
 $(".btn").on("click", function() {
-    startButton = setInterval(count, 60000);
+    startButton = setInterval(count, 1000);
     console.log(startButton);
 
 
@@ -36,9 +37,11 @@ $(".btn").on("click", function() {
 // Convert timer to minutes/seconds and display countdown
     function count () {
 
-        --timerText;
+        countDown--;
 
-        var converted = timeConverter(timerText);
+        timerText.text(countDown);
+
+        var converted = timeConverter(countDown);
     
 
         $("#display").text(converted);
@@ -65,5 +68,5 @@ $(".btn").on("click", function() {
     
     }
     
-    timerText.textContent = "Time Remaining: " + count;
+    timerText.textContent = "Time Remaining: " + timerText;
 })
