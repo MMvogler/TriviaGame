@@ -15,18 +15,20 @@
 </head>
 <body>
     
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1 class="text-center"><strong> Candy Trivia Game! </strong></h1>
-            </div>
+    
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center"><strong> Candy Trivia Game! </strong></h1>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <button type="button" class="btn btn-primary" id="start-button">Start</button>
-            </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button type="button" class="btn btn-primary" id="start-button"> Start </button>
         </div>
+    </div>
+    
+    <div class="container" id="game">
 
         <div class="row">
             <div class="col-sm-12 time">
@@ -36,38 +38,29 @@
 
         <div class="row">
             <div class="col-sm-12 text-center">
-               Twizzlers was first made in what year?
+                <div id="question">
+                    <p> Question </p>
+                </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="choices">
             <div class="col-sm-12 text-center">
-                1929
-                1990
-                1887
-                1974
+                <div class= "choice" id="A" onclick="checkAnswer('A')"> A </div>
+                <div class="choice" id="B" onlick="checkAnswer('B')"> B </div>
+                <div class="choice" id="C" onclick="checkAnswer('C')"> C </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                
+         
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <div id="score">
+                <p id="corrAnswers-text"></p>
+                <p id="incorrAnswers-text"></p>
+                <p id="unanswered-text"></p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                
-            </div>
-        </div>
-        
     </div>
 
 

@@ -1,9 +1,5 @@
 
-
-// Variable tha will hold setInterval that runs stopwatch
-var intervalId;
-
-// Variable for where things need to go on the page
+// Variable to position the timer on the page
 var timerText = $("#timer");
 
 // Variables for game scoring
@@ -12,29 +8,43 @@ var incorrAnswers = 0;
 var unansweredQs = 0;
 var countDown = 60;
 
-// var clockRunning = false;
-
+// The start button
 var startButton;
 
+// Array of questions with their answers 
+
+var questions = [
+    {
+        question : "Twizzlers were made in what year?",
+        choiceA : "1972",
+        choiceB : "1929",
+        choiceC : "1884",
+        correct : "B",
+    },
+
+    {
+        question : "The Hershey Company was worth how much in 2017?",
+        choiceA : "$23 million",
+        choiceB : "$254 million",
+        choiceC : "$783 million",
+        correct : "C",
+    },
+
+    {
+        question : "What is the largest candy company in the world?",
+        choiceA : "The Hershey Company",
+        choiceB : "Mars Inc.",
+        choiceC : "Nestle",
+        correct : "B",
+    }
+]
+
+// The start button counts one second at a time
 $(".btn").on("click", function() {
     startButton = setInterval(count, 1000);
     console.log(startButton);
 
-
-// The timer starts counting down from 1 minute
-// if (!clockRunning) {
-//     intervalId = setInterval(count, 60000);
-//     clockRunning = true;
-// }
-
-// // When the timer ends
-// function oneMinute () {
-    
-//     $("#timer-done").append("<h2>All Done!</h2>");
-    
-// }
-
-// Convert timer to minutes/seconds and display countdown
+    // The timer counts down and is displayed as text on the screen
     function count () {
 
         countDown--;
@@ -47,6 +57,7 @@ $(".btn").on("click", function() {
         $("#display").text(converted);
     }
 
+    // Converts the timer to minutes and then seconds
     function timeConverter(i) {
 
         var minutes = Math.floor(i / 60);
@@ -70,3 +81,5 @@ $(".btn").on("click", function() {
     
     timerText.textContent = "Time Remaining: " + timerText;
 })
+
+
