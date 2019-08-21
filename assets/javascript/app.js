@@ -16,70 +16,67 @@ var startButton;
 var questions = [
     {
         question : "Twizzlers were made in what year?",
-        choiceA : "1972",
-        choiceB : "1929",
-        choiceC : "1884",
-        correct : "B",
+        answers : ["1972","1929","1884"],
+        correct : "1929",
     },
 
     {
         question : "The Hershey Company was worth how much in 2017?",
-        choiceA : "$23 million",
-        choiceB : "$254 million",
-        choiceC : "$783 million",
-        correct : "C",
+        answers : ["$23 million","$254 million", "$783 million"],
+        correct : "$783 million",
     },
 
     {
         question : "What is the largest candy company in the world?",
-        choiceA : "The Hershey Company",
-        choiceB : "Mars Inc.",
-        choiceC : "Nestle",
-        correct : "B",
+        answers: ["The Hershey Company","Mars Inc.","Nestle"],
+        correct : "Mars Inc.",
     }
 ]
 
+var counter = 12;
+
+
+function count () {
+
+    counter--;
+
+    $("#timer").text(counter);
+
+    if(counter === 0) {
+        console.log("ran out of time");
+    }
+    
+    }
+
+
+
+
 // The start button counts one second at a time
 $(".btn").on("click", function() {
-    startButton = setInterval(count, 1000);
-    console.log(startButton);
+    // startButton = setInterval(count, 1000);
+    // console.log(startButton);
+    $(".btn").hide();
+    var timer = setInterval(count, 1000);
 
-    // The timer counts down and is displayed as text on the screen
-    function count () {
+    for (let i = 0; i< questions.length; i++) {
+        console.log(questions[i].question);
+        $("#quiz-area").append("<h2>" + questions[i].question + "</h2>" );
 
-        countDown--;
-
-        timerText.text(countDown);
-
-        var converted = timeConverter(countDown);
-    
-
-        $("#display").text(converted);
+        for (let j = 0; j < questions[i].answers.length; j++) {
+            console.log(questions[i].answers[j]);
+            $("#quiz-area").append("<p>" + questions[i].answers[j] + "</p>");
+        }
+        
     }
-
-    // Converts the timer to minutes and then seconds
-    function timeConverter(i) {
-
-        var minutes = Math.floor(i / 60);
-        var seconds = i - (minutes * 60);
-
-        if (seconds < 10) {
-            seconds = "0" + seconds;
-        }
-
-        if(minutes === 0) {
-            minutes = "00";
-        }
-        else if (minutes < 10) {
-            minutes = "0" + minutes;
-        }
-
-        return minutes + ":" + seconds;
-
-    
-    }
-    
-    timerText.textContent = "Time Remaining: " + timerText;
+   
 })
+
+// for (var i = 0; i < questions.length; i++) {
+
+// }
+// for (let index = 0; index < array.length; index++) {
+//     const element = array[index];
+    
+// }
 
 
