@@ -35,15 +35,21 @@ var questions = [
 
 var counter = 12;
 
-
+// Counter that counts down
 function count () {
 
     counter--;
 
     $("#timer").text(counter);
 
+    // Counter stops at zero 
     if(counter === 0) {
-        console.log("ran out of time");
+
+        // Hide the counter
+        $("#timer").hide();
+
+        // Display the user's score
+
     }
     
     }
@@ -51,18 +57,21 @@ function count () {
 
 
 
-// The start button counts one second at a time
+// A start button that starts the counter
 $(".btn").on("click", function() {
-    // startButton = setInterval(count, 1000);
-    // console.log(startButton);
+   
+   // Hides the button once it is pressed
     $(".btn").hide();
+
+     // Counts one second at a time
     var timer = setInterval(count, 1000);
 
-    for (let i = 0; i< questions.length; i++) {
+    // Display questions with the choices for their answers
+    for (var i = 0; i< questions.length; i++) {
         console.log(questions[i].question);
         $("#quiz-area").append("<h2>" + questions[i].question + "</h2>" );
 
-        for (let j = 0; j < questions[i].answers.length; j++) {
+        for (var j = 0; j < questions[i].answers.length; j++) {
             console.log(questions[i].answers[j]);
             $("#quiz-area").append("<p>" + questions[i].answers[j] + "</p>");
         }
@@ -71,12 +80,8 @@ $(".btn").on("click", function() {
    
 })
 
-// for (var i = 0; i < questions.length; i++) {
 
-// }
-// for (let index = 0; index < array.length; index++) {
-//     const element = array[index];
-    
-// }
+
+
 
 
