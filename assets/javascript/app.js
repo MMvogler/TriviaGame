@@ -46,16 +46,14 @@ function count () {
     if(counter === 0) {
 
         // Hide the counter
-        $("#timer").hide();
+        $("#game").hide();
 
-        // Display the user's score
+        // // Display the user's score
+        // $("#score").display();
 
     }
     
     }
-
-
-
 
 // A start button that starts the counter
 $(".btn").on("click", function() {
@@ -66,7 +64,12 @@ $(".btn").on("click", function() {
      // Counts one second at a time
     var timer = setInterval(count, 1000);
 
-    // Display questions with the choices for their answers
+    // // Variable for the users answers 
+    // var response = append(questions[i].append);
+
+    // var questionOrder = -1;
+
+    // Display questions with their answer choices
     for (var i = 0; i< questions.length; i++) {
         console.log(questions[i].question);
         $("#quiz-area").append("<h2>" + questions[i].question + "</h2>" );
@@ -74,7 +77,27 @@ $(".btn").on("click", function() {
         for (var j = 0; j < questions[i].answers.length; j++) {
             console.log(questions[i].answers[j]);
             $("#quiz-area").append("<p>" + questions[i].answers[j] + "</p>");
+            // $(".box").append('<button class="checkAnswer"
+            //     answersText=${questions[i].answers[j]}
+            //     correctAnswer=${questions[i].correct}>
+            //     ${questions[i].answers[j]}</button>');
         }
+
+
+        // function displayCheckbox(){
+        //     if(questionOrder < questions.length-1)
+        //         {questionOrder++;
+        //         $("#box").html(<h2>${questions[questionNumber].question}</h2>);
+        //         for(var j = 0; j<  )
+        //         }
+
+        // $(".box").append("checkbox" + questions[i].answers[j]);
+
+        // if (response === questions[i].correct) {
+        //     corrAnswers ++;
+        // } else {
+        //     incorrAnswers ++;
+        // }
         
     }
    
