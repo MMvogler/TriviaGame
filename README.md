@@ -2,9 +2,6 @@
 This project was done on the fifth week on Vanderbilt's Coding Bootcamp. 
 
 ## Screen Shot 
-Before user hits the start button:
-![Screen shot](assets/images/TriviaScreenShot1.png)
-
 Once the user hits the start button:
 ![Screen shot](assets/images/TriviaScreenShot2.png)
 
