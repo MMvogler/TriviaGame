@@ -2,11 +2,14 @@
 This project was done on the fifth week on Vanderbilt's Coding Bootcamp. 
 
 ## Screen Shot 
+Before user hits the start button:
+![Screen shot](assets/images/TriviaScreenShot1.png)
+
 Once the user hits the start button:
 ![Screen shot](assets/images/TriviaScreenShot2.png)
 
 Once the timer runs out:
-![Screen shot](assets/images/TrviaScreenShot3.png)
+![Screen shot](assets/images/TriviaScreenShot3.png)
 
 ## Technologies Used
 - jQuery 
